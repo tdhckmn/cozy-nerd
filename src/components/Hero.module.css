@@ -1,0 +1,81 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6rem 2rem 4rem;
+  background: radial-gradient(ellipse at center, #303030 0%, #2a2a2a 60%, #1e1e1e 100%);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  max-width: 800px;
+}
+
+.wordmark {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 8px;
+}
+
+.tagline {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-top: 0.5rem;
+}
+
+.sub {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btnPrimary,
+.btnSecondary {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.75rem 2rem;
+  border-radius: 3px;
+  transition: all 0.2s;
+}
+
+.btnPrimary {
+  background: var(--green);
+  color: #fff;
+}
+
+.btnPrimary:hover {
+  background: var(--green-dark);
+}
+
+.btnSecondary {
+  border: 1px solid var(--gray-border);
+  color: var(--text-muted);
+}
+
+.btnSecondary:hover {
+  border-color: var(--text-muted);
+  color: var(--text);
+}
