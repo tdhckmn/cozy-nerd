@@ -5,10 +5,13 @@
   justify-content: center;
   text-align: center;
   padding: 6rem 2rem 4rem;
-  background: radial-gradient(ellipse at center, #303030 0%, #2a2a2a 60%, #1e1e1e 100%);
+  background: transparent;
+  position: relative;
 }
 
 .inner {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -78,4 +81,22 @@
 .btnSecondary:hover {
   border-color: var(--text-muted);
   color: var(--text);
+}
+
+.socials {
+  display: flex;
+  gap: 1.25rem;
+  margin-top: 0.5rem;
+  justify-content: center;
+}
+
+.socialLink {
+  color: var(--text-muted);
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.socialLink:hover {
+  color: var(--green);
 }

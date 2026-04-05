@@ -1,0 +1,53 @@
+.root {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0;
+  animation: orbPulse 8s ease-in-out infinite;
+}
+
+.orb1 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #45b86a55 0%, transparent 70%);
+  top: -15%;
+  left: -10%;
+  animation-delay: 0s;
+  animation-duration: 9s;
+}
+
+.orb2 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #2e9e8a44 0%, transparent 70%);
+  bottom: -10%;
+  right: -5%;
+  animation-delay: -3s;
+  animation-duration: 11s;
+}
+
+.orb3 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #45b86a33 0%, transparent 70%);
+  top: 40%;
+  left: 55%;
+  animation-delay: -6s;
+  animation-duration: 13s;
+}
+
+@keyframes orbPulse {
+  0%   { opacity: 0;    transform: scale(0.9) translate(0, 0); }
+  25%  { opacity: 1;    transform: scale(1.05) translate(2%, -2%); }
+  50%  { opacity: 0.6;  transform: scale(0.95) translate(-2%, 3%); }
+  75%  { opacity: 1;    transform: scale(1.08) translate(3%, 1%); }
+  100% { opacity: 0;    transform: scale(0.9) translate(0, 0); }
+}

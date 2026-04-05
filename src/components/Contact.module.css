@@ -1,6 +1,6 @@
 .section {
   padding: 6rem 2rem;
-  background: var(--bg);
+  background: transparent;
 }
 
 .inner {
@@ -41,6 +41,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.25rem;
+  margin-bottom: 3rem;
 }
 
 .card {
@@ -79,4 +80,114 @@ a.card:hover {
   font-size: 0.95rem;
   color: var(--text);
   word-break: break-all;
+}
+
+/* Form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  background: var(--bg-card);
+  border: 1px solid var(--gray-border);
+  border-radius: 6px;
+  padding: 2rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.field .label {
+  margin-bottom: 0;
+}
+
+.input,
+.textarea {
+  background: var(--bg);
+  border: 1px solid var(--gray-border);
+  border-radius: 4px;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  padding: 0.65rem 0.875rem;
+  transition: border-color 0.2s;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: var(--green);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submitBtn {
+  align-self: flex-start;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.75rem 2rem;
+  border-radius: 3px;
+  background: var(--green);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.submitBtn:hover:not(:disabled) {
+  background: var(--green-dark);
+}
+
+.submitBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.feedback {
+  font-size: 0.875rem;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.feedbackSuccess {
+  background: rgba(69, 184, 106, 0.1);
+  border-color: var(--green);
+  color: var(--green);
+}
+
+.feedbackError {
+  background: rgba(220, 80, 80, 0.1);
+  border-color: #dc5050;
+  color: #dc5050;
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 4rem 1.25rem;
+  }
+
+  .form {
+    padding: 1.25rem;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
 }

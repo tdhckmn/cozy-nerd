@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+import { logEvent } from '../analytics.js'
 import styles from './Services.module.css'
 
 const services = [
@@ -15,6 +17,10 @@ const services = [
 ]
 
 export default function Services() {
+  function handleCtaClick(serviceName) {
+    logEvent('click', { link_name: 'service_get_in_touch', service: serviceName })
+  }
+
   return (
     <section id="services" className={styles.section}>
       <div className={styles.inner}>
@@ -31,6 +37,13 @@ export default function Services() {
               <span className={styles.cardSlash}>/</span>
               <h3 className={styles.cardTitle}>{s.title}</h3>
               <p className={styles.cardDesc}>{s.desc}</p>
+              <Link
+                to="/contact"
+                className={styles.cardCta}
+                onClick={() => handleCtaClick(s.title)}
+              >
+                Get in Touch →
+              </Link>
             </div>
           ))}
         </div>

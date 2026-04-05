@@ -10,10 +10,10 @@ export default function Footer() {
             COZY<span className={styles.slash}>/</span>NERD
           </p>
           <p className={styles.copy}>
-            &copy; {new Date().getFullYear()} Cozy Nerd. All rights reserved.
+            &copy; {new Date().getFullYear()} Cozy Nerd
           </p>
         </div>
-        <p className={styles.tagline}>AI for Normal People</p>
+        <p className={styles.tagline}>AI for Everyday Folks</p>
       </div>
     </footer>
   )
