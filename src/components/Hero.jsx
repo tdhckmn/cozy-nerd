@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { logEvent } from '../analytics.js'
+import PageSEO from './PageSEO.jsx'
 import styles from './Hero.module.css'
 
 const socials = [
@@ -45,15 +46,20 @@ export default function Hero() {
 
   return (
     <section id="hero" className={styles.hero}>
+      <PageSEO
+        title="COZY/NERD — AI for Everyday Folks"
+        description="Detroit-based AI consulting by James Wright. Making artificial intelligence accessible for everyday people and businesses."
+        path="/"
+      />
 <div className={styles.inner}>
         <img
           src="/images/hero.png"
           alt="COZY/NERD"
           className={styles.wordmark}
         />
-        <p className={styles.tagline}>
+        <h1 className={styles.tagline}>
           AI for Everyday Folks
-        </p>
+        </h1>
         <p className={styles.sub}>
           Detroit-Based Millennial Futurist
         </p>

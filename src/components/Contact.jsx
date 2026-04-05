@@ -1,6 +1,8 @@
 import { useRef, useState } from 'react'
 import emailjs from '@emailjs/browser'
+import { Helmet } from 'react-helmet-async'
 import { logEvent } from '../analytics.js'
+import PageSEO from './PageSEO.jsx'
 import styles from './Contact.module.css'
 
 const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
@@ -29,8 +31,32 @@ export default function Contact() {
     logEvent('click', { link_name: `contact_${name}`, destination: dest })
   }
 
+  const localBusinessSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'COZY/NERD',
+    url: 'https://cozynerd.tech',
+    telephone: '+17347521190',
+    email: 'cozynerd.consulting@gmail.com',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Detroit',
+      addressRegion: 'MI',
+      addressCountry: 'US',
+    },
+    description: 'Detroit-based AI consulting for everyday people and businesses.',
+  }
+
   return (
     <section id="contact" className={styles.section}>
+      <PageSEO
+        title="Contact"
+        description="Get in touch with COZY/NERD. Reach James Wright for AI consulting inquiries in Detroit, MI."
+        path="/contact"
+      />
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(localBusinessSchema)}</script>
+      </Helmet>
       <div className={styles.inner}>
         <div className={styles.header}>
           <span className={styles.slash}>/</span>

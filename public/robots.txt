@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://cozynerd.tech/sitemap.xml

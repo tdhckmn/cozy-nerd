@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { logEvent } from '../analytics.js'
+import PageSEO from './PageSEO.jsx'
 import styles from './Services.module.css'
 
 const services = [
@@ -23,6 +24,11 @@ export default function Services() {
 
   return (
     <section id="services" className={styles.section}>
+      <PageSEO
+        title="Services"
+        description="AI consulting services including data collection, forecasting, prompt engineering, workflow analysis, and more — from COZY/NERD in Detroit, MI."
+        path="/services"
+      />
       <div className={styles.inner}>
         <div className={styles.header}>
           <span className={styles.slash}>/</span>

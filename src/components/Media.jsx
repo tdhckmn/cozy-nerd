@@ -1,4 +1,5 @@
 import { logEvent } from '../analytics.js'
+import PageSEO from './PageSEO.jsx'
 import styles from './Media.module.css'
 
 const socials = [
@@ -54,6 +55,11 @@ export default function Media() {
 
   return (
     <section id="media" className={styles.section}>
+      <PageSEO
+        title="Media"
+        description="Stay up to date with COZY/NERD through social media, guides, tips, and video content."
+        path="/media"
+      />
       <div className={styles.inner}>
         <div className={styles.header}>
           <span className={styles.slash}>/</span>
